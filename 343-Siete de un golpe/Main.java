@@ -50,18 +50,18 @@ public class Main {
             int moscas = 0; 
             for (int x = 0; x < tx; x++) {
                 if (y >= my) {
-                    suma[x] -= t[x][siguienteY];
+                    suma[x] -= t[x][siguienteY]; // restar a la suma la fila que va a ser sustituida
                 }
                 int hayMosca = fila.charAt(x) == 'X' ? 1 : 0; // 1 si hay mosca; 0 si no hay
-                t[x][siguienteY] = hayMosca;
-                suma[x] += hayMosca;
+                t[x][siguienteY] = hayMosca; // Sustituir valor
+                suma[x] += hayMosca; // añadir a la suma el valor recién leido
 
-                if (y >= my -1 ) {
-                    moscas += suma[x];
-                    if (x >= mx) {
+                if (y >= my -1 ) { // A partir de la fila my-1 empezar a contar moscas cubiertas por matamoscas
+                    moscas += suma[x];  // sumar la nueva columna cubierta por matamoscas
+                    if (x >= mx) {  // restar el valor de suma que abandona la zona cubierta por matamoscas
                         moscas -= suma[x - mx];
                     }
-                    if (x >= mx - 1) {
+                    if (x >= mx - 1) { // Solo contamos cuando el bucle alcanza mx-1, que es lo que cubre el matamoscas
                         if (moscas <= 7) {
                             moscasMuertas[moscas]++;
                         };             
@@ -70,7 +70,7 @@ public class Main {
             }
             siguienteY = (siguienteY + 1) % my; // Siguiente fila en cola circular
         }
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) { // Imprimir resultados
             System.out.format("%d%s", moscasMuertas[i], i < 7 ? " " : "\n");
         }
         return true;
