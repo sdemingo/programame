@@ -68,7 +68,7 @@ public class Main {
                     }
                 }
             }
-            siguienteY = (siguienteY + 1) % my;
+            siguienteY = (siguienteY + 1) % my; // Siguiente fila en cola circular
         }
         for (int i = 0; i < 8; i++) {
             System.out.format("%d%s", moscasMuertas[i], i < 7 ? " " : "\n");
