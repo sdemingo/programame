@@ -21,7 +21,7 @@ public class Main {
         }
         int i = -1; // inicializar cuenta
         while (ninnos.size()>1) { // mientras queden niños
-            i = (i + salto +1) % ninnos.size(); // decidir cual es el siguietne salvado
+            i = (i + salto + 1) % ninnos.size(); // decidir cual es el siguietne salvado
             ninnos.remove(i); // quitarlo de la lista
             i--; // ajustar el indice porque he quitado a un niño
         }
