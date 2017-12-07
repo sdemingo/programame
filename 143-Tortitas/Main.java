@@ -8,7 +8,7 @@ public class Main {
     
     public static boolean caso() {
         Deque<Integer> tortitas = new ArrayDeque<>();  // La pila de tortitas
-        List<Integer> temp = new ArrayList<>(); // Una lista auxiliar para hacer el voltero
+        List<Integer> temp = new ArrayList<>(); // Una lista auxiliar para hacer el volteo
         int tamanno; // lectura de la pila de tortitas
         do {
             tamanno = in.nextInt(); // leer tamaño
@@ -36,9 +36,6 @@ public class Main {
         return true;
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         while (caso());
     }
